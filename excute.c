@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void execmd(char *line, char **arr)
+void execute(char *line, char **arr)
 {
 	pid_t id;
 
