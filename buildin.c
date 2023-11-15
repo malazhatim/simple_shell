@@ -6,8 +6,7 @@
  * @n_put: User Input
  * Return: Void (Exit Statue)
  */
-void  b_exit(char **com, char *n_put)
-{
+void  b_exit(char **com, char *n_put){
 	int stat, a;
 
 	if (com[1] == NULL)
@@ -18,7 +17,7 @@ void  b_exit(char **com, char *n_put)
 	}
 	for (a = 0; com[1][a]; a++)
 	{
-		if (_isalpha(com[1][a++]) != 0)
+		if (_isalpha(com[1][a]) != 0)
 		{
 			perror("error");
 			break;
@@ -40,7 +39,7 @@ void  b_exit(char **com, char *n_put)
  */
 int c_dir(char **com)
 {
-	int a;
+	int a = -1;
 
 	if (com[1] == NULL)
 		a = chdir(getenv("HOME"));
@@ -80,9 +79,10 @@ int b_env(__attribute__((unused)) char **com)
 {
 	size_t a = 0;
 	int b;
-
+	printf("test3\n");
 	while (environ[a] != NULL)
 	{
+		printf("test4\n");
 		b = _strlen(environ[a]);
 		write(1, environ[a], b);
 		write(STDOUT_FILENO, "\n", 1);

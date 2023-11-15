@@ -34,6 +34,7 @@ int h_builtin(char **com)
 		if (_strcmp(com[0], (b_in + a)->co) == 0)
 		{
 			return ((b_in + a)->f(com));
+			a++;
 		}
 	}
 		while ((b_in + a)->co);
@@ -60,8 +61,8 @@ int builtins(char **com)
 		if (_strcmp(com[0], (bult + a)->co) == 0)
 		{
 			return (0);
+			a++;
 		}
-	}
-		while ((bult + a)->co);
+	}while ((bult + a)->co);
 	return (-1);
 }
