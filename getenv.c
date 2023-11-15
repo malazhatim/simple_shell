@@ -11,6 +11,7 @@ char *_getenv(char *env)
 	size_t b;
 	char *c;
 	int d = 0;
+	int j, x;
 
 	while (environ[d])
 	{
@@ -23,6 +24,13 @@ char *_getenv(char *env)
 				free(c);
 				return (NULL);
 			}
+			d++;
+			j = 0;
+			for (x = a + 1; environ[d][x]; x++, j++)
+			{
+				c[j] = environ[d][x];
+			}
+			c[j] = '\0';
 
 			return (c);
 		}

@@ -13,7 +13,7 @@ int fork_fun(char **tok, char *n_put)
 
 	if (*tok == NULL)
 	{
-		return (1);
+		return (-1);
 	}
 
 	if (pid == -1)

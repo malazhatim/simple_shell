@@ -6,7 +6,9 @@
  * @n_put: User Input
  * Return: Void (Exit Statue)
  */
-void  b_exit(char **com, char *n_put){
+
+void  b_exit(char **com, char *n_put)
+{
 	int stat, a;
 
 	if (com[1] == NULL)
@@ -79,10 +81,9 @@ int b_env(__attribute__((unused)) char **com)
 {
 	size_t a = 0;
 	int b;
-	printf("test3\n");
+
 	while (environ[a] != NULL)
 	{
-		printf("test4\n");
 		b = _strlen(environ[a]);
 		write(1, environ[a], b);
 		write(STDOUT_FILENO, "\n", 1);
