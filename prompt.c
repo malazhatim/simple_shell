@@ -4,9 +4,7 @@
 /**
  * prmo - print the shell prompt
  */
-void prmo()
+void prmo(void)
 {
-/**	char *simple = "$ ";
-*/	
 write(1, "$ ", 2);
 }

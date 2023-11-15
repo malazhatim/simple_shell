@@ -11,7 +11,7 @@ int main(void)
 	int coun = 0, stat = 1;
 	int bul = 0;
 	(void)bul;
-	
+
 	while (stat)
 	{
 		coun++;
@@ -37,7 +37,6 @@ int main(void)
 
 		}
 		f_all(com, u_in);
-	
 	}
 			return (stat);
 }
