@@ -12,7 +12,6 @@ char c = 0;
 char *b = malloc(buff);
 int d;
 
-	
 	while (c != EOF && c != '\n')
 	{
 		d = read(STDIN_FILENO, &c, 1);

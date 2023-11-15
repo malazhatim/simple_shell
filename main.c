@@ -9,7 +9,7 @@ int main(void)
 {
 	char *u_in, **com;
 	int coun = 0, stat = 1;
-	int bul = 0;
+	/*int bul = 0;*/
 
 	while (stat)
 	{

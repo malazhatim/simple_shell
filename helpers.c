@@ -30,14 +30,13 @@ int h_builtin(char **com)
 	};
 	int a = 0;
 
-	do
-	{
+	do {
 		if (_strcmp(com[0], (b_in + a)->co) == 0)
 		{
 			return ((b_in + a)->f(com));
 		}
 	}
-	while ((b_in + a)->co);
+		while ((b_in + a)->co);
 	return (-1);
 }
 
@@ -57,11 +56,12 @@ int builtins(char **com)
 	};
 	int a = 0;
 
-	do
-	{
+	do {
 		if (_strcmp(com[0], (bult + a)->co) == 0)
+		{
 			return (0);
+		}
 	}
-	while ((bult + a)->co);
+		while ((bult + a)->co);
 	return (-1);
 }

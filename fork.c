@@ -30,11 +30,11 @@ int fork_fun(char **tok, char *n_put)
 			free(tok);
 			exit(EXIT_FAILURE);
 		}
-		/**else
+		else
 		{
 			path_cmd(cmd);
 		}
-		return (EXIT_SUCCESS);*/
+		return (EXIT_SUCCESS);
 	}
 	wait(&stat);
 	return (0);
