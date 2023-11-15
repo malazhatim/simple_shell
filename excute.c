@@ -1,17 +1,11 @@
 #include "shell.h"
 
-void execute(char *line, char **arr)
+void execute(char **argv)
 {
-	pid_t id;
+	char *com = NULL;
 
-	id = fork();
-
-	if (id == 0)
+	if (execve(com, argv, NULL) == -1)
 	{
-		execve(line, arr, NULL);
-	}
-	else
-	{
-		wait(NULL);
+		perror("no succsed");
 	}
 }
