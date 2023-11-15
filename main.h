@@ -1,3 +1,4 @@
+
 #ifndef _main_H_
 #define _main_H_
 
@@ -39,6 +40,10 @@ int _strcmp(char *str1, char *str2);
 int h_builtin(char **com);
 void f_all(char **ar, char *p);
 int builtins(char **com);
+char *build(char *token, char *value);
+int path_cmd(char **cmd);
+char *_strcat(char *dest, char *src);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
 /**
  * struct bulltin - contain bultin to handle

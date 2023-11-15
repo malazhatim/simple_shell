@@ -23,6 +23,10 @@ int fork_fun(char **tok, char *n_put)
 
 	if (pid == 0)
 	{
+		if (_strncmp(*tok, "./", 2) != 0 && _strncmp(*tok, "/", 1) != 0)
+		{
+			path_cmd(tok);
+		}
 		if (execve(*tok, tok, environ) == -1)
 		{
 			perror("Error");

@@ -7,13 +7,16 @@
 
 int main(void)
 {
-	char *u_in, **com, bul;
+	char *u_in, **com;
 	int coun = 0, stat = 1;
-	(void) bul;
-
+	int bul = 0;
+	(void)bul;
+	
 	while (stat)
 	{
 		coun++;
+	printf("malaz");
+
 
 			prmo();
 		u_in = _getline();
@@ -34,6 +37,7 @@ int main(void)
 
 		}
 		f_all(com, u_in);
+	
 	}
-	return (stat);
+			return (stat);
 }

@@ -1,11 +1,12 @@
+
 #include "main.h"
 
 /**
  * prmo - print the shell prompt
  */
-void prmo(void)
+void prmo()
 {
-	char *i = "$ ";
-
-	write(1, &i, sizeof(i));
+/**	char *simple = "$ ";
+*/	
+write(1, "$ ", 2);
 }
