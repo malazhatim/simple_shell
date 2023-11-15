@@ -18,7 +18,8 @@
 
 extern char **environ;
 
-int  main(__attribute__((unused))int a, char **com, char *u_in);
+void prmo(void);
+int main(void);
 char *_strdup(char *str);
 int _strncmp(const char *str1, const char *str2, size_t n);
 int _putchar(char c);

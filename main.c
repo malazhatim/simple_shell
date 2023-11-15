@@ -2,27 +2,22 @@
 
 /**
  * main - Simple Shell
- * a:num
- * *u_in: user input
- * **com:toknizer
  * Return: Exit Value By Status
  */
 
-int  main(__attribute__((unused))int a, char **com, char **u_in)
+int main(void)
 {
-	char bul;
+	char *u_in, **com, bul;
 	int coun = 0, stat = 1;
 	(void) bul;
 
 	while (stat)
 	{
 		coun++;
-		if (isatty(STDIN_FILENO) == 1)
-		{
-			write(1, "$ ", sizeof("$ "));
+
+			prmo();
 		u_in = _getline();
 		com = token(u_in);
-		}
 		if (_strcmp(com[0], "exit") == 0)
 		{
 			b_exit(com, u_in);
