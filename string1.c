@@ -46,14 +46,12 @@ int _atoi(char *s)
 
 /**
  * _isalpha - Check if Alphabtic
- *@c: Character
- * Return: 1 If True 0 If Not
+ * @c: Character
+ * Return: 1 If True
  */
 int _isalpha(int c)
 {
-	if (((c >= 97) && (c <= 122)) || ((c >= 65) && (c <= 90)))
-
-	return (1);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
 /**
