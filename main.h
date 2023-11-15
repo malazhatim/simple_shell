@@ -30,7 +30,7 @@ int fork_fun(char **tok, char *n_put);
 int b_env(__attribute__((unused)) char **com);
 int ctrld(char **a);
 int c_dir(char **com);
-void  b_exit(char **com, char *n_put);
+void b_exit(char **com, char *n_put);
 int _atoi(char *s);
 int _isalpha(int c);
 char *_getline();

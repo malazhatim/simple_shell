@@ -32,7 +32,7 @@ char *_strdup(char *str)
  * @n: number Of Characters.
  * Return: 1 If The Strings Don't Match Otherwise 0
  */
-int strncmp(const char *str1, const char *str2, size_t n)
+int _strncmp(const char *str1, const char *str2, size_t n)
 {
 	size_t a = 0;
 

@@ -32,9 +32,8 @@ int fork_fun(char **tok, char *n_put)
 		}
 		else
 		{
-			path_cmd(cmd);
-		}
 		return (EXIT_SUCCESS);
+		}
 	}
 	wait(&stat);
 	return (0);

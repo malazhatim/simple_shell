@@ -7,17 +7,16 @@
 
 int main(void)
 {
-	char *u_in, **com;
+	char *u_in, **com, bul;
 	int coun = 0, stat = 1;
-	/*int bul = 0;*/
+	(void) bul;
 
 	while (stat)
 	{
 		coun++;
-		if (isatty(STDIN_FILENO))
+
 			prmo();
 		u_in = _getline();
-
 		com = token(u_in);
 		if (_strcmp(com[0], "exit") == 0)
 		{
