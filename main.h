@@ -43,8 +43,7 @@ int builtins(char **com);
 char *build(char *token, char *value);
 int path_cmd(char **cmd);
 char *_strcat(char *dest, char *src);
-char *_memcpy(char *dest, char *src, unsigned int n);
-void creat_envi(char **envi); 
+char *_memcpy(char *dest, char *src, unsigned int n); 
 
 /**
  * struct bulltin - contain bultin to handle
