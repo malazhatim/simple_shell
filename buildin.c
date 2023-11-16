@@ -72,7 +72,7 @@ int ctrld(char **a)
 
 /**
  * b_env - Display Enviromet
- * a:env
+ * @a: env
  * Return:Always 0
  */
 int b_env(__attribute__((unused)) char **a)
