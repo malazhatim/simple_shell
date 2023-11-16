@@ -72,9 +72,10 @@ int ctrld(char **a)
 
 /**
  * b_env - Display Enviromet
+ * a:env
  * Return:Always 0
  */
-int b_env()
+int b_env(__attribute__((unused)) char **a)
 {
 	char **p = environ;
 

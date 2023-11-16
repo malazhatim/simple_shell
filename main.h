@@ -27,7 +27,7 @@ void _puts(char *str);
 int _strlen(char *str);
 char **token(char *n_put);
 int fork_fun(char **tok, char *n_put);
-int b_env();
+int b_env(__attribute__((unused)) char **a);
 int ctrld(char **a);
 int c_dir(char **com);
 void b_exit(char **com, char *n_put);
