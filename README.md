@@ -1,2 +1,3 @@
 bulding a simple shell using c
-linux
+linux shell
+x

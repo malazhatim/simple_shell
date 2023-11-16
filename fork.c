@@ -13,7 +13,7 @@ int fork_fun(char **tok, char *n_put)
 
 	if (*tok == NULL)
 	{
-		return (1);
+		return (-1);
 	}
 
 	if (pid == -1)
@@ -23,11 +23,14 @@ int fork_fun(char **tok, char *n_put)
 
 	if (pid == 0)
 	{
+		if (_strncmp(*tok, "./", 2) != 0 && _strncmp(*tok, "/", 1) != 0)
+		{
+			g_path(tok);
+		}
 		if (execve(*tok, tok, environ) == -1)
 		{
 			perror("Error");
-			free(n_put);
-			free(tok);
+			f_all(tok, n_put);
 			exit(EXIT_FAILURE);
 		}
 		else

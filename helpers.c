@@ -1,28 +1,38 @@
 #include "main.h"
 
 /**
- * f_all - Free
- * @ar:Array Pointer
- * @p:Char Pointer
- * Return: Void
+ * builtins - check builtin command to handle
+ * @com:command to check
+ * Return: 0 Succes -1 Fail
  */
-void f_all(char **ar, char *p)
+int builtins(char **com)
 {
-	free(ar);
-	free(p);
-	ar = NULL;
-	p = NULL;
+	b_t bult[] = {
+		{"cd", NULL},
+		{"env", NULL},
+		{"^D", NULL},
+		{NULL, NULL}
+	};
+	int a = 0;
+
+	do {
+		if (_strcmp(com[0], (bult + a)->co) == 0)
+			return (0);
+		a++;
+	}
+		while ((bult + a)->co);
+	return (-1);
 }
 
 /**
  * h_builtin - Handle Builtin Command
- * @com:  Command
+ * @com: Parsed Command
  * Return: -1 Fail 0 Succes (Return :Excute Builtin)
  */
 
 int h_builtin(char **com)
 {
-	 b_t b_in[] = {
+	 b_t bult[] = {
 		{"cd", c_dir},
 		{"env", b_env},
 		{"^D", ctrld},
@@ -31,37 +41,68 @@ int h_builtin(char **com)
 	int a = 0;
 
 	do {
-		if (_strcmp(com[0], (b_in + a)->co) == 0)
+		if (_strcmp(com[0], (bult + a)->co) == 0)
 		{
-			return ((b_in + a)->f(com));
+			return ((bult + a)->f(com));
 		}
+		a++;
 	}
-		while ((b_in + a)->co);
+		while ((bult + a)->co);
 	return (-1);
 }
 
 /**
- * builtins - check the builtin command
- * @com:command to check
- * Return: 0 Succes -1 Fail
+ * f_all - Free Array
+ * @a:Array Pointer
+ * @b:Char Pointer
+ * Return: Void
  */
-int builtins(char **com)
+void f_all(char **a, char *b)
 {
-	b_t bult[] = {
-		{"cd", NULL},
-		{"exit", NULL},
-		{"^D", NULL},
-		{"env", NULL},
-		{NULL, NULL}
-	};
-	int a = 0;
+	free(a);
+	free(b);
+}
 
-	do {
-		if (_strcmp(com[0], (bult + a)->co) == 0)
-		{
-			return (0);
-		}
+/**
+ * _strcat - concatenates two strings
+ * @d: string to append to
+ * @s: string to add
+ * Return: a pointer to the resulting string
+ */
+char *_strcat(char *d, char *s)
+{
+	int e = 0, h = 0;
+
+	while (d[e] != '\0')
+		e++;
+
+	while (s[h] != '\0')
+	{
+		d[e] = s[h];
+		h++;
+		e++;
 	}
-		while ((bult + a)->co);
-	return (-1);
+
+	d[e] = '\0';
+
+	return (d);
+}
+
+/**
+ * _stcpy - Copy Byte From Source To Destination
+ * @d: Destination Pointer
+ * @s: Source Pointer
+ * @n: Size (How Much You Will Copy)
+ *Return: Void Pointer
+ */
+char *_stcpy(char *d, char *s, int n)
+{
+	int f = 0;
+
+	while (f < n)
+	{
+		d[f] = s[f];
+		f++;
+	}
+	return (d);
 }

@@ -27,7 +27,7 @@ void _puts(char *str);
 int _strlen(char *str);
 char **token(char *n_put);
 int fork_fun(char **tok, char *n_put);
-int b_env(__attribute__((unused)) char **com);
+int b_env(__attribute__((unused)) char **a);
 int ctrld(char **a);
 int c_dir(char **com);
 void b_exit(char **com, char *n_put);
@@ -37,8 +37,12 @@ char *_getline();
 char *_getenv(char *env);
 int _strcmp(char *str1, char *str2);
 int h_builtin(char **com);
-void f_all(char **ar, char *p);
+void f_all(char **a, char *b);
 int builtins(char **com);
+char *build(char *tok, char *v);
+int g_path(char **cmd);
+char *_strcat(char *d, char *s);
+char *_stcpy(char *d, char *s, int n);
 
 /**
  * struct bulltin - contain bultin to handle

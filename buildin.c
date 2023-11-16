@@ -6,19 +6,19 @@
  * @n_put: User Input
  * Return: Void (Exit Statue)
  */
+
 void  b_exit(char **com, char *n_put)
 {
 	int stat, a;
 
 	if (com[1] == NULL)
 	{
-		free(n_put);
-		free(com);
+		f_all(com, n_put);
 		exit(EXIT_SUCCESS);
 	}
 	for (a = 0; com[1][a]; a++)
 	{
-		if (_isalpha(com[1][a++]) != 0)
+		if (_isalpha(com[1][a]) != 0)
 		{
 			perror("error");
 			break;
@@ -26,8 +26,7 @@ void  b_exit(char **com, char *n_put)
 		else
 		{
 			stat = _atoi(com[1]);
-			free(n_put);
-			free(com);
+			f_all(com, n_put);
 			exit(stat);
 		}
 	}
@@ -40,7 +39,7 @@ void  b_exit(char **com, char *n_put)
  */
 int c_dir(char **com)
 {
-	int a;
+	int a = -1;
 
 	if (com[1] == NULL)
 		a = chdir(getenv("HOME"));
@@ -73,20 +72,20 @@ int ctrld(char **a)
 
 /**
  * b_env - Display Enviromet
- * @com:Command
+ * @a: env
  * Return:Always 0
  */
-int b_env(__attribute__((unused)) char **com)
+int b_env(__attribute__((unused)) char **a)
 {
-	size_t a = 0;
-	int b;
+	char **p = environ;
 
-	while (environ[a] != NULL)
+	while (*p != NULL)
 	{
-		b = _strlen(environ[a]);
-		write(1, environ[a], b);
+		write(STDOUT_FILENO, *p, _strlen(*p));
 		write(STDOUT_FILENO, "\n", 1);
-		a++;
+		p++;
 	}
 	return (0);
 }
+
+

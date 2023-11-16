@@ -7,15 +7,15 @@
 
 int main(void)
 {
-	char *u_in, **com, bul;
+	char *u_in, **com;
 	int coun = 0, stat = 1;
-	(void) bul;
+	int bul = 0;
+	(void)bul;
 
 	while (stat)
 	{
 		coun++;
-
-			prmo();
+			write(1, "$ ", 2);
 		u_in = _getline();
 		com = token(u_in);
 		if (_strcmp(com[0], "exit") == 0)
@@ -35,5 +35,5 @@ int main(void)
 		}
 		f_all(com, u_in);
 	}
-	return (stat);
+			return (stat);
 }
