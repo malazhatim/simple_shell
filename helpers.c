@@ -3,7 +3,7 @@
 /**
  * builtins - check builtin command to handle
  * @com:command to check
- * Return: 0 Succes -1 Fail
+ * Return: 0 Succes always -1 Fail
  */
 int builtins(char **com)
 {
