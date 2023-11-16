@@ -13,8 +13,7 @@ void  b_exit(char **com, char *n_put)
 
 	if (com[1] == NULL)
 	{
-		free(n_put);
-		free(com);
+		f_all(com, n_put);
 		exit(EXIT_SUCCESS);
 	}
 	for (a = 0; com[1][a]; a++)
@@ -27,8 +26,7 @@ void  b_exit(char **com, char *n_put)
 		else
 		{
 			stat = _atoi(com[1]);
-			free(n_put);
-			free(com);
+			f_all(com, n_put);
 			exit(stat);
 		}
 	}
@@ -74,20 +72,19 @@ int ctrld(char **a)
 
 /**
  * b_env - Display Enviromet
- * @com:Command
  * Return:Always 0
  */
-int b_env(__attribute__((unused)) char **com)
+int b_env()
 {
-	size_t a = 0;
-	int b;
+	char **p = environ;
 
-	while (environ[a] != NULL)
+	while (*p != NULL)
 	{
-		b = _strlen(environ[a]);
-		write(1, environ[a], b);
+		write(STDOUT_FILENO, *p, _strlen(*p));
 		write(STDOUT_FILENO, "\n", 1);
-		a++;
+		p++;
 	}
 	return (0);
 }
+
+

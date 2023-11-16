@@ -15,10 +15,7 @@ int main(void)
 	while (stat)
 	{
 		coun++;
-	printf("malaz");
-
-
-			prmo();
+			write(1, "$ ", 2);
 		u_in = _getline();
 		com = token(u_in);
 		if (_strcmp(com[0], "exit") == 0)
