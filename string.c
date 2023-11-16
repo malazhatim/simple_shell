@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_strdup - copies  A String
+ * *_strdup - copies  A Strings
  * @str: the string
  * Return: the copied string
  */
