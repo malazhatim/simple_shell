@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * token- tokenize Line Of Input
+ * token- tokenize Line Of Inputs
  * @n_put:User Input
  * Return: Array Of Char
  */
